@@ -3,7 +3,7 @@ import json
 import requests
 import requests.exceptions
 
-from zsdk.utilities import _request
+from zsdk.utilities import call
 
 
 class Endpoint:
@@ -22,13 +22,13 @@ class Endpoint:
         path: str = None,
         **kwargs,
     ) -> json or str:
-        result = _request(
+        result = call(
             session=self._session,
             method=method,
             url=f"{self._base_url}{path}",
             **kwargs,
         )
         try:
-            return result.json()
+            return result
         except requests.exceptions.JSONDecodeError:
-            return result.text
+            return result

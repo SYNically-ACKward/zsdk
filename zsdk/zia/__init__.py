@@ -5,9 +5,11 @@ import requests
 from requests import Response
 
 from zsdk.logger import setup_logger
-from zsdk.utilities import _request, get_user_agent
+from zsdk.utilities import call
 
 from .admin_roles import admin_roles
+from .admin_users import admin_users
+from .admin_audit_logs import admin_audit_logs
 
 logger = setup_logger(name=__name__)
 
@@ -18,16 +20,16 @@ def _obfuscate_api_key(seed: str) -> list:
     r = str(int(n) >> 1).zfill(6)
     key = "".join(seed[int(digit)] for digit in n)
     key += "".join(seed[int(digit) + 2] for digit in r)
-    return [now, key]
+    return str(now), str(key)
 
 
 class zia:
     def __init__(
-            self,
-            username: str,
-            password: str,
-            api_key: str,
-            cloud_name: str,
+        self,
+        username: str,
+        password: str,
+        api_key: str,
+        cloud_name: str,
     ):
         self._session = requests.Session()
         self.username = username
@@ -38,37 +40,51 @@ class zia:
         self._authenticate()
 
     def _authenticate(
-                      self,
-                      ) -> Response:
+        self,
+    ) -> Response:
         now, key = _obfuscate_api_key(self.api_key)
-        result = _request(
+        result = call(
             session=self._session,
             method="post",
             url=f"{self._base_url}/authenticatedSession",
             json={
-                "apikey": key,
+                "apiKey": key,
                 "username": self.username,
                 "password": self.password,
-                "timestamp": str(now)
-            }
+                "timestamp": now,
+            },
         )
         logger.debug(result)
         return result
 
     def activate_changes(
-            self,
+        self,
     ) -> Response:
-        result = _request(
+        result = call(
             session=self._session,
-            method="put",
-            url=f"{self._base_url}/orgAdminStatus/activate"
+            method="post",
+            url=f"{self._base_url}/status/activate",
         )
 
         return result
 
     @property
-    def admin_role(self) -> admin_roles:
+    def admin_roles(self) -> admin_roles:
         return admin_roles(
+            session=self._session,
+            base_url=self._base_url,
+        )
+
+    @property
+    def admin_users(self) -> admin_users:
+        return admin_users(
+            session=self._session,
+            base_url=self._base_url,
+        )
+
+    @property
+    def admin_audit_logs(self) -> admin_audit_logs:
+        return admin_audit_logs(
             session=self._session,
             base_url=self._base_url,
         )

@@ -162,3 +162,4 @@ cython_debug/
 # Custom gitignore additions
 scratch.py
 output.log
+config.toml
