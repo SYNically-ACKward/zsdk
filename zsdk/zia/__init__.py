@@ -9,10 +9,7 @@ from zsdk.utilities import call
 from .admin_roles import admin_roles
 from .admin_users import admin_users
 from .admin_audit_logs import admin_audit_logs
-from .user_management import (
-    departments,
-    groups,
-)
+from .user_management import departments, groups, users, auditors
 from .firewall_policies import (
     firewall_filtering_rules,
     ip_destination_groups,
@@ -24,6 +21,16 @@ from .firewall_policies import (
     network_service_groups,
     network_services,
     time_windows,
+)
+from .data_loss_prevention import (
+    web_dlp_rules,
+    incident_receivers,
+    idm_profiles,
+    icap_servers,
+    dlp_notification_templates,
+    dlp_dictionaries,
+    dlp_engines,
+    dlp_edm,
 )
 
 logger = setup_logger(name=__name__)
@@ -104,6 +111,14 @@ class zia:
         return groups(session=self._session, base_url=self._base_url)
 
     @property
+    def users(self) -> users:
+        return users(session=self._session, base_url=self._base_url)
+
+    @property
+    def auditors(self) -> auditors:
+        return auditors(session=self._session, base_url=self._base_url)
+
+    @property
     def firewall_filtering_rules(self) -> firewall_filtering_rules:
         return firewall_filtering_rules(session=self._session, base_url=self._base_url)
 
@@ -144,3 +159,37 @@ class zia:
     @property
     def time_windows(self) -> time_windows:
         return time_windows(session=self._session, base_url=self._base_url)
+
+    @property
+    def web_dlp_rules(self) -> web_dlp_rules:
+        return web_dlp_rules(session=self._session, base_url=self._base_url)
+
+    @property
+    def incident_receivers(self) -> incident_receivers:
+        return incident_receivers(session=self._session, base_url=self._base_url)
+
+    @property
+    def idm_profiles(self) -> idm_profiles:
+        return idm_profiles(session=self._session, base_url=self._base_url)
+
+    @property
+    def icap_servers(self) -> icap_servers:
+        return icap_servers(session=self._session, base_url=self._base_url)
+
+    @property
+    def dlp_notification_templates(self) -> dlp_notification_templates:
+        return dlp_notification_templates(
+            session=self._session, base_url=self._base_url
+        )
+
+    @property
+    def dlp_dictionaries(self) -> dlp_dictionaries:
+        return dlp_dictionaries(session=self._session, base_url=self._base_url)
+
+    @property
+    def dlp_engines(self) -> dlp_engines:
+        return dlp_engines(session=self._session, base_url=self._base_url)
+
+    @property
+    def dlp_edm(self) -> dlp_edm:
+        return dlp_edm(session=self._session, base_url=self._base_url)
