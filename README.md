@@ -12,19 +12,19 @@ The Zscaler SDK (zsdk) is a Python library designed to provide an easy and progr
 
 You can install zsdk via pip:
 
-\`\`\`bash
+```bash
 pip install zsdk
-\`\`\`
+```
 
 ## Getting Started
 
 Here's a quick example to get you started with ZIA:
 
-\`\`\`python
+```python
 from zsdk import zia
 zscaler = zia(username='YOUR_USERNAME', password='YOUR_PASSWORD', api_key='YOUR_API_KEY')
 zscaler.authenticate()
-\`\`\`
+```
 
 See the [examples](examples/) directory for more comprehensive examples and the [documentation](link-to-documentation) for detailed API reference.
 
