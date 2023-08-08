@@ -195,3 +195,13 @@ def test_dlp_engines_list_lite(tenant):
 @pytest.mark.dlp_engines
 def test_dlp_engines_validate(tenant):
     pass
+
+
+@pytest.mark.dlp_edm
+def test_dlp_edm_list(tenant):
+    pass
+
+
+@pytest.mark.dlp_edm
+def test_dlp_edm_list_lite(tenant):
+    pass

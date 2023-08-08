@@ -291,7 +291,7 @@ class dlp_edm(Endpoint):
         return result.json()
 
 
-class dlp_notifications(Endpoint):
+class dlp_notification_templates(Endpoint):
     def list(self) -> List[dict]:
         """
         Retrieve a list of DLP Notification Templates based on search criteria.
