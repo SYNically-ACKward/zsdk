@@ -26,18 +26,12 @@ def tenant():
 
 
 def test_create(tenant):
-    data = tenant.admin_audit_logs.create(
-        now_minus_ten,
-        current_timestamp
-    )
+    data = tenant.admin_audit_logs.create(now_minus_ten, current_timestamp)
     assert data.status_code in [204, 200]
 
 
 def test_status(tenant):
-    create_data = tenant.admin_audit_logs.create(
-        now_minus_ten,
-        current_timestamp
-    )
+    create_data = tenant.admin_audit_logs.create(now_minus_ten, current_timestamp)
     assert create_data.status_code in [204, 200]
 
     data = tenant.admin_audit_logs.status()
@@ -45,10 +39,7 @@ def test_status(tenant):
 
 
 def test_delete(tenant):
-    create_data = tenant.admin_audit_logs.create(
-        now_minus_ten,
-        current_timestamp
-    )
+    create_data = tenant.admin_audit_logs.create(now_minus_ten, current_timestamp)
     assert create_data.status_code in [204, 200]
 
     data = tenant.admin_audit_logs.delete()
@@ -56,13 +47,10 @@ def test_delete(tenant):
 
 
 def test_download(tenant):
-    create_data = tenant.admin_audit_logs.create(
-        now_minus_ten,
-        current_timestamp
-    )
+    create_data = tenant.admin_audit_logs.create(now_minus_ten, current_timestamp)
     assert create_data.status_code in [204, 200]
 
-    while tenant.admin_audit_logs.status().get('status') != "COMPLETE":
+    while tenant.admin_audit_logs.status().get("status") != "COMPLETE":
         time.sleep(2)
     data = tenant.admin_audit_logs.download()
     assert type(data) is str

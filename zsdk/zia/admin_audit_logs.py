@@ -26,14 +26,12 @@ actions = [
     "SIGN_IN",
     "SIGN_OUT",
     "STAGE_PAC_VERSION",
-    "UPDATE"
+    "UPDATE",
 ]
 
 
 class admin_audit_logs(Endpoint):
-    def status(
-            self
-    ) -> dict:
+    def status(self) -> dict:
         """
         Gets the status of a request for an audit log report.
         After sending a POST request to /auditlogEntryReport to generate a report, you can continue to call GET
@@ -41,24 +39,21 @@ class admin_audit_logs(Endpoint):
         Once the status is COMPLETE, you can send another GET request to /auditlogEntryReport/download
         to download the report as a CSV file.
         """
-        response = self._req(
-            method="get",
-            path="/auditlogEntryReport"
-        )
+        response = self._req(method="get", path="/auditlogEntryReport")
         return response.json()
 
     def create(
-            self,
-            start_time: int,
-            end_time: int,
-            action_types: list = actions,
-            category: str = None,
-            subcategories: list = None,
-            action_result: str = None,
-            action_interface: str = None,
-            object_name: str = None,
-            client_ip: str = None,
-            admin_name: str = None,
+        self,
+        start_time: int,
+        end_time: int,
+        action_types: list = actions,
+        category: str = None,
+        subcategories: list = None,
+        action_result: str = None,
+        action_interface: str = None,
+        object_name: str = None,
+        client_ip: str = None,
+        admin_name: str = None,
     ) -> Response:
         """
         Creates an audit log report for the specified time period and saves it as a CSV file.
@@ -78,53 +73,39 @@ class admin_audit_logs(Endpoint):
 
         """
         data = {
-                "startTime": start_time,
-                "endTime": end_time,
-                "actionTypes": action_types,
-                "category": category,
-                "subcategories": subcategories,
-                "actionResult": action_result,
-                "actionInterface": action_interface,
-                "objectName": object_name,
-                "clientIP": client_ip,
-                "adminName": admin_name
+            "startTime": start_time,
+            "endTime": end_time,
+            "actionTypes": action_types,
+            "category": category,
+            "subcategories": subcategories,
+            "actionResult": action_result,
+            "actionInterface": action_interface,
+            "objectName": object_name,
+            "clientIP": client_ip,
+            "adminName": admin_name,
         }
 
         keys_to_remove = [k for k, v in data.items() if v is None]
         for k in keys_to_remove:
             del data[k]
 
-        result = self._req(
-            method="post",
-            path="/auditlogEntryReport",
-            json=data
-        )
+        result = self._req(method="post", path="/auditlogEntryReport", json=data)
 
         return result
 
-    def delete(
-            self
-    ) -> Response:
+    def delete(self) -> Response:
         """
         Cancels the request to create an audit log report.
         """
-        result = self._req(
-            method="delete",
-            path="/auditlogEntryReport"
-        )
+        result = self._req(method="delete", path="/auditlogEntryReport")
 
         return result
 
-    def download(
-            self
-    ) -> csv:
+    def download(self) -> csv:
         """
         Downloads the most recently created audit log report.
         After a call to GET /auditlogEntryReport indicates that the report (CSV file)
         was generated, you can send a GET request to /auditlogEntryReport/download to download the file.
         """
-        result = self._req(
-            method="get",
-            path="/auditlogEntryReport/download"
-        )
-        return result.content.decode('utf-8')
+        result = self._req(method="get", path="/auditlogEntryReport/download")
+        return result.content.decode("utf-8")

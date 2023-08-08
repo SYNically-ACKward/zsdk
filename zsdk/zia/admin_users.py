@@ -1,5 +1,4 @@
 from zsdk.api import Endpoint
-import json
 
 
 class admin_users(Endpoint):
