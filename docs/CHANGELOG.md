@@ -1,4 +1,13 @@
 ## ZSDK v0.1.2 (In Progress) [@Ryan Ulrick](mailto:rulrick@zscaler.com)
+- Feat: Tests placeholders for all data_loss_prevention methods and sub-methods
+- Feat: Methods for data_loss_prevention.web_dlp_rules: get, create, update, list, list_lite, delete
+- Feat: Methods for data_loss_prevention.incident_receivers: get, list, list_lite
+- Feat: Methods for data_loss_prevention.dlp_edm: list, list_lite
+- Feat: Methods for data_loss_prevention.idm_profiles: get, list, list_lite
+- Feat: Methods for data_loss_prevention.icap_servers: get, list, list_lite
+- Feat: Methods for data_loss_prevention.dlp_notification_templates: get, create, update, list, delete
+- Feat: Methods for data_loss_prevention.dlp_dictionaries: get, create, update, list, delete, list_lite, validate
+- Feat: Methods for data_loss_prevention.dlp_engines: get, create, update, list, delete, list_lite, validate
 - Feat: Methods for user_management.departments: list, get
 - Feat: Tests for user_management.departments: list, get
 - Feat: Methods for user_management.groups: list, get
