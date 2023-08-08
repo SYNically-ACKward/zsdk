@@ -1,4 +1,3 @@
-import json
 import time
 
 import requests
@@ -10,6 +9,22 @@ from zsdk.utilities import call
 from .admin_roles import admin_roles
 from .admin_users import admin_users
 from .admin_audit_logs import admin_audit_logs
+from .user_management import (
+    departments,
+    groups,
+)
+from .firewall_policies import (
+    firewall_filtering_rules,
+    ip_destination_groups,
+    ip_source_groups,
+    ipv6_destination_groups,
+    ipv6_source_groups,
+    network_application_groups,
+    network_applications,
+    network_service_groups,
+    network_services,
+    time_windows,
+)
 
 logger = setup_logger(name=__name__)
 
@@ -70,21 +85,62 @@ class zia:
 
     @property
     def admin_roles(self) -> admin_roles:
-        return admin_roles(
-            session=self._session,
-            base_url=self._base_url,
-        )
+        return admin_roles(session=self._session, base_url=self._base_url)
 
     @property
     def admin_users(self) -> admin_users:
-        return admin_users(
-            session=self._session,
-            base_url=self._base_url,
-        )
+        return admin_users(session=self._session, base_url=self._base_url)
 
     @property
     def admin_audit_logs(self) -> admin_audit_logs:
-        return admin_audit_logs(
-            session=self._session,
-            base_url=self._base_url,
+        return admin_audit_logs(session=self._session, base_url=self._base_url)
+
+    @property
+    def departments(self) -> departments:
+        return departments(session=self._session, base_url=self._base_url)
+
+    @property
+    def groups(self) -> groups:
+        return groups(session=self._session, base_url=self._base_url)
+
+    @property
+    def firewall_filtering_rules(self) -> firewall_filtering_rules:
+        return firewall_filtering_rules(session=self._session, base_url=self._base_url)
+
+    @property
+    def ip_destination_groups(self) -> ip_destination_groups:
+        return ip_destination_groups(session=self._session, base_url=self._base_url)
+
+    @property
+    def ip_source_groups(self) -> ip_source_groups:
+        return ip_source_groups(session=self._session, base_url=self._base_url)
+
+    @property
+    def ipv6_destination_groups(self) -> ipv6_destination_groups:
+        return ipv6_destination_groups(session=self._session, base_url=self._base_url)
+
+    @property
+    def ipv6_source_groups(self) -> ipv6_source_groups:
+        return ipv6_source_groups(session=self._session, base_url=self._base_url)
+
+    @property
+    def network_application_groups(self) -> network_application_groups:
+        return network_application_groups(
+            session=self._session, base_url=self._base_url
         )
+
+    @property
+    def network_applications(self) -> network_applications:
+        return network_applications(session=self._session, base_url=self._base_url)
+
+    @property
+    def network_service_groups(self) -> network_service_groups:
+        return network_service_groups(session=self._session, base_url=self._base_url)
+
+    @property
+    def network_services(self) -> network_services:
+        return network_services(session=self._session, base_url=self._base_url)
+
+    @property
+    def time_windows(self) -> time_windows:
+        return time_windows(session=self._session, base_url=self._base_url)
