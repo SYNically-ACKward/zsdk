@@ -1,4 +1,8 @@
 ## ZSDK v0.1.2 (In Progress) [@Ryan Ulrick](mailto:rulrick@zscaler.com)
+- Feat: Tests placeholders for all locations methods and sub-methods
+- Feat: Methods for locations.locations: list, list_lite, get, create, update, delete, bulk_delete
+- Feat: Methods for locations.sublocations: list
+- Feat: Methods for locations.location_groups: list, list_lite, count, get, get_lite
 - Feat: Methods for event_logs.event_logs: status, create, delete, download
 - Feat: Tests for all event_logs.event_logs methods and sub-methods
 - Feat: Tests placeholders for all device_groups methods and sub-methods

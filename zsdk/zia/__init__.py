@@ -11,6 +11,7 @@ from .admin_users import admin_users
 from .admin_audit_logs import admin_audit_logs
 from .device_groups import device_groups, devices
 from .event_logs import event_logs
+from .locations import locations, location_groups, sublocations
 from .user_management import departments, groups, users, auditors
 from .firewall_policies import (
     firewall_filtering_rules,
@@ -207,3 +208,15 @@ class zia:
     @property
     def event_logs(self) -> event_logs:
         return event_logs(session=self._session, base_url=self._base_url)
+
+    @property
+    def locations(self) -> locations:
+        return locations(session=self._session, base_url=self._base_url)
+
+    @property
+    def location_groups(self) -> location_groups:
+        return location_groups(session=self._session, base_url=self._base_url)
+
+    @property
+    def sublocations(self) -> sublocations:
+        return sublocations(session=self._session, base_url=self._base_url)
