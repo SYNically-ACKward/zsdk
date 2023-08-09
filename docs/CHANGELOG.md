@@ -1,4 +1,6 @@
 ## ZSDK v0.1.2 (In Progress) [@Ryan Ulrick](mailto:rulrick@zscaler.com)
+- Feat: Methods for event_logs.event_logs: status, create, delete, download
+- Feat: Tests for all event_logs.event_logs methods and sub-methods
 - Feat: Tests placeholders for all device_groups methods and sub-methods
 - Feat: Methods for device_groups.device_groups: list
 - Feat: Methods for device_groups.devices: list, list_lite
