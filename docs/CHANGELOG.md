@@ -1,4 +1,7 @@
 ## ZSDK v0.1.2 (In Progress) [@Ryan Ulrick](mailto:rulrick@zscaler.com)
+- Feat: Tests placeholders for all device_groups methods and sub-methods
+- Feat: Methods for device_groups.device_groups: list
+- Feat: Methods for device_groups.devices: list, list_lite
 - Feat: Tests placeholders for all data_loss_prevention methods and sub-methods
 - Feat: Methods for data_loss_prevention.web_dlp_rules: get, create, update, list, list_lite, delete
 - Feat: Methods for data_loss_prevention.incident_receivers: get, list, list_lite

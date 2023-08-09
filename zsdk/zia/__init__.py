@@ -9,6 +9,7 @@ from zsdk.utilities import call
 from .admin_roles import admin_roles
 from .admin_users import admin_users
 from .admin_audit_logs import admin_audit_logs
+from .device_groups import device_groups, devices
 from .user_management import departments, groups, users, auditors
 from .firewall_policies import (
     firewall_filtering_rules,
@@ -193,3 +194,11 @@ class zia:
     @property
     def dlp_edm(self) -> dlp_edm:
         return dlp_edm(session=self._session, base_url=self._base_url)
+
+    @property
+    def device_groups(self) -> device_groups:
+        return device_groups(session=self._session, base_url=self._base_url)
+
+    @property
+    def devices(self) -> devices:
+        return devices(session=self._session, base_url=self._base_url)
