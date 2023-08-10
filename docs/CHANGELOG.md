@@ -1,4 +1,6 @@
 ## ZSDK v0.1.2 (In Progress) [@Ryan Ulrick](mailto:rulrick@zscaler.com)
+- Feat: Test placeholder for sandbox_submission methods and sub-methods
+- Feat: Methods for sandbox_submission.sandbox_submission: submit
 - Feat: Tests placeholders for all sandbox_settings methods and sub-methods
 - Feat: Methods for sandbox_settings.sandbox_settings: get, update, count
 - Feat: Tests placeholders for all sandbox_report methods and sub-methods
