@@ -1,4 +1,6 @@
 ## ZSDK v0.1.2 (In Progress) [@Ryan Ulrick](mailto:rulrick@zscaler.com)
+- Feat: Tests placeholders for all rule_labels methods and sub-methods
+- Feat: Methods for rule_labels.rule_labels: list, get, create, update, delete
 - Feat: Tests placeholders for all locations methods and sub-methods
 - Feat: Methods for locations.locations: list, list_lite, get, create, update, delete, bulk_delete
 - Feat: Methods for locations.sublocations: list

@@ -12,6 +12,7 @@ from .admin_audit_logs import admin_audit_logs
 from .device_groups import device_groups, devices
 from .event_logs import event_logs
 from .locations import locations, location_groups, sublocations
+from .rule_labels import rule_labels
 from .user_management import departments, groups, users, auditors
 from .firewall_policies import (
     firewall_filtering_rules,
@@ -220,3 +221,7 @@ class zia:
     @property
     def sublocations(self) -> sublocations:
         return sublocations(session=self._session, base_url=self._base_url)
+
+    @property
+    def rule_labels(self) -> rule_labels:
+        return rule_labels(session=self._session, base_url=self._base_url)
