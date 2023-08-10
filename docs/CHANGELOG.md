@@ -1,5 +1,9 @@
 ## ZSDK v0.1.2 (In Progress) [@Ryan Ulrick](mailto:rulrick@zscaler.com)
-- Feat: Test placeholder for sandbox_submission methods and sub-methods
+- Feat: Tests placeholders for all security_policy methods and sub-methods
+- Feat: Methods for security_policy.allowlist: list, update
+- Feat: Methods for security_policy.denylist: list, update
+- Feat: Methods for security_policy.blacklist: update
+- Feat: Tests placeholders for sandbox_submission methods and sub-methods
 - Feat: Methods for sandbox_submission.sandbox_submission: submit
 - Feat: Tests placeholders for all sandbox_settings methods and sub-methods
 - Feat: Methods for sandbox_settings.sandbox_settings: get, update, count
