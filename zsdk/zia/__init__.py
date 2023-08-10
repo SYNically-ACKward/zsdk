@@ -13,6 +13,7 @@ from .device_groups import device_groups, devices
 from .event_logs import event_logs
 from .locations import locations, location_groups, sublocations
 from .rule_labels import rule_labels
+from .sandbox_report import sandbox_report_file, sandbox_report_quota
 from .user_management import departments, groups, users, auditors
 from .firewall_policies import (
     firewall_filtering_rules,
@@ -225,3 +226,11 @@ class zia:
     @property
     def rule_labels(self) -> rule_labels:
         return rule_labels(session=self._session, base_url=self._base_url)
+
+    @property
+    def sandbox_report_quota(self) -> sandbox_report_quota:
+        return sandbox_report_quota(session=self._session, base_url=self._base_url)
+
+    @property
+    def sandbox_report_file(self) -> sandbox_report_file:
+        return sandbox_report_file(session=self._session, base_url=self._base_url)
