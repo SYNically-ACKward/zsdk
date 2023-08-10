@@ -14,6 +14,7 @@ from .event_logs import event_logs
 from .locations import locations, location_groups, sublocations
 from .rule_labels import rule_labels
 from .sandbox_report import sandbox_report_file, sandbox_report_quota
+from .sandbox_settings import sandbox_settings
 from .user_management import departments, groups, users, auditors
 from .firewall_policies import (
     firewall_filtering_rules,
@@ -234,3 +235,7 @@ class zia:
     @property
     def sandbox_report_file(self) -> sandbox_report_file:
         return sandbox_report_file(session=self._session, base_url=self._base_url)
+
+    @property
+    def sandbox_settings(self) -> sandbox_settings:
+        return sandbox_settings(session=self._session, base_url=self._base_url)
