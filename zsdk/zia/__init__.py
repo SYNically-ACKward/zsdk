@@ -17,6 +17,13 @@ from .sandbox_report import sandbox_report_file, sandbox_report_quota
 from .sandbox_settings import sandbox_settings
 from .sandbox_submission import sandbox_submission
 from .security_policy_settings import allowlist, denylist, blacklist
+from .traffic_forwarding import (
+    gre_tunnels,
+    ipv6,
+    static_ips,
+    vips,
+    vpn_credentials
+)
 from .user_management import departments, groups, users, auditors
 from .firewall_policies import (
     firewall_filtering_rules,
@@ -257,3 +264,23 @@ class zia:
     @property
     def blacklist(self) -> blacklist:
         return blacklist(session=self._session, base_url=self._base_url)
+
+    @property
+    def gre_tunnels(self) -> gre_tunnels:
+        return gre_tunnels(session=self._session, base_url=self._base_url)
+
+    @property
+    def ipv6(self) -> ipv6:
+        return ipv6(session=self._session, base_url=self._base_url)
+
+    @property
+    def static_ips(self) -> static_ips:
+        return static_ips(session=self._session, base_url=self._base_url)
+
+    @property
+    def vips(self) -> vips:
+        return vips(session=self._session, base_url=self._base_url)
+
+    @property
+    def vpn_credentials(self) -> vpn_credentials:
+        return vpn_credentials(session=self._session, base_url=self._base_url)

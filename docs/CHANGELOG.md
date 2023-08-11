@@ -1,4 +1,14 @@
 ## ZSDK v0.1.2 (In Progress) [@Ryan Ulrick](mailto:rulrick@zscaler.com)
+- Feat: Tests placeholders for traffic_forwarding.vpn_credentials sub-methods
+- Feat: Methods for traffic_forwarding.vpn_credentials: list, get, create, update, delete, bulk_delete
+- Feat: Tests placeholders for traffic_forwarding.vips sub-methods
+- Feat: Methods for traffic_forwarding.vips: list, list_by_dc, list_recommended
+- Feat: Tests placeholders for traffic_forwarding.static_ips sub-methods
+- Feat: Methods for traffic_forwarding.static_ips: list, get, create, update, delete, validate
+- Feat: Tests placeholders for traffic_forwarding.ipv6 sub-methods
+- Feat: Methods for traffic_forwarding.ipv6: get, get_nat64, get_dns64
+- Feat: Tests placeholders for traffic_forwarding.gre_tunnels sub-methods
+- Feat: Methods for traffic_forwarding.gre_tunnels: list, get, create, update, delete, get_internal_ips, get_org_ips
 - Feat: Tests placeholders for all security_policy methods and sub-methods
 - Feat: Methods for security_policy.allowlist: list, update
 - Feat: Methods for security_policy.denylist: list, update
