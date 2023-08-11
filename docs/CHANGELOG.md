@@ -1,4 +1,6 @@
 ## ZSDK v0.1.2 (In Progress) [@Ryan Ulrick](mailto:rulrick@zscaler.com)
+- Feat: Tests placeholders for url_filtering_rules.url_filtering_rules sub-methods
+- Feat: Methods for url_filtering_rules.url_filtering_rules: list, get, create, update, delete
 - Feat: Tests placeholders for url_categories.url_categories methods
 - Feat: Methods for url_categories.url_categories: list, list_lite, get, create, update, delete, get_quota, lookup
 - Feat: Tests placeholders for traffic_forwarding.vpn_credentials sub-methods
