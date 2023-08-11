@@ -1,4 +1,6 @@
 ## ZSDK v0.1.2 (In Progress) [@Ryan Ulrick](mailto:rulrick@zscaler.com)
+- Feat: Tests placeholders for user_authentication_settings sub-methods
+- Feat: Methods for user_authentication_settings.user_authentication_settings: list, update
 - Feat: Tests placeholders for url_filtering_rules.url_filtering_rules sub-methods
 - Feat: Methods for url_filtering_rules.url_filtering_rules: list, get, create, update, delete
 - Feat: Tests placeholders for url_categories.url_categories methods

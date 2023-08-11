@@ -26,6 +26,7 @@ from .traffic_forwarding import (
 )
 from .url_categories import url_categories
 from .url_filtering_rules import url_filtering_rules
+from .user_authentication_settings import user_authentication_settings
 from .user_management import departments, groups, users, auditors
 from .firewall_policies import (
     firewall_filtering_rules,
@@ -294,3 +295,7 @@ class zia:
     @property
     def url_filtering_rules(self) -> url_filtering_rules:
         return url_filtering_rules(session=self._session, base_url=self._base_url)
+
+    @property
+    def user_authentication_settings(self) -> user_authentication_settings:
+        return user_authentication_settings(session=self._session, base_url=self._base_url)
