@@ -21,9 +21,9 @@ pip install zsdk
 Here's a quick example to get you started with ZIA:
 
 ```python
-from zsdk import zia
-zscaler = zia(username='YOUR_USERNAME', password='YOUR_PASSWORD', api_key='YOUR_API_KEY')
-zscaler.authenticate()
+from zsdk.zia import zia
+zscaler = zia(username='YOUR_USERNAME', password='YOUR_PASSWORD', api_key='YOUR_API_KEY', cloud_name="zscaler.net")
+print(zscaler.locations.list())
 ```
 
 See the [examples](examples/) directory for more comprehensive examples and the [documentation](link-to-documentation) for detailed API reference.

@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "zsdk"
-version = "0.0.1"
-description = ""
+version = "1.0.0"
+description = "Unofficial Python SDK for Zscaler public API endpoints."
 authors = ["Ryan Ulrick <rulrick@zscaler.com>"]
 readme = "README.md"
 packages = [{include = "zsdk"}]

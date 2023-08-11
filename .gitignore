@@ -163,3 +163,4 @@ cython_debug/
 scratch.py
 output.log
 config.toml
+.DS_Store
