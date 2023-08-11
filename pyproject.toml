@@ -1,6 +1,10 @@
 [tool.poetry]
 name = "zsdk"
+<<<<<<< HEAD
 version = "1.1.0"
+=======
+version = "1.1.1"
+>>>>>>> origin/main
 description = "Unofficial Python SDK for Zscaler public API endpoints."
 authors = ["Ryan Ulrick <rulrick@zscaler.com>"]
 readme = "README.md"
