@@ -29,9 +29,7 @@ report_payload = {
     "startTime": now_minus_ten,
     "endTime": current_timestamp,
     "category": "Provisioning",
-    "subcategories": [
-        "SCIM"
-    ]
+    "subcategories": ["SCIM"],
 }
 
 

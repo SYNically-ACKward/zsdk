@@ -6,14 +6,14 @@ from typing import List, Optional
 
 class locations(Endpoint):
     def list(
-            self,
-            search: Optional[str] = None,
-            xff_enabled: Optional[bool] = None,
-            auth_required: Optional[bool] = None,
-            bw_enfoced: Optional[bool] = None,
-            page: Optional[int] = None,
-            page_size: Optional[int] = None
-            ) -> List[dict]:
+        self,
+        search: Optional[str] = None,
+        xff_enabled: Optional[bool] = None,
+        auth_required: Optional[bool] = None,
+        bw_enfoced: Optional[bool] = None,
+        page: Optional[int] = None,
+        page_size: Optional[int] = None,
+    ) -> List[dict]:
         """
         Gets locations only, not sub-locations.
         When a location matches the given search parameter criteria only its parent
@@ -35,22 +35,18 @@ class locations(Endpoint):
         }
         params = {snake_to_camel(key): value for key, value in params.items()}
 
-        result = self._req(
-            method="get",
-            path="/locations",
-            params=params
-        )
+        result = self._req(method="get", path="/locations", params=params)
 
         return result.json()
 
     def list_lite(
-            self,
-            include_sub_locations: Optional[bool] = None,
-            include_parent_locations: Optional[bool] = None,
-            search: Optional[str] = None,
-            page: Optional[int] = None,
-            page_size: Optional[int] = None
-            ):
+        self,
+        include_sub_locations: Optional[bool] = None,
+        include_parent_locations: Optional[bool] = None,
+        search: Optional[str] = None,
+        page: Optional[int] = None,
+        page_size: Optional[int] = None,
+    ):
         """
         Gets a name and ID dictionary of locations.
 
@@ -70,35 +66,22 @@ class locations(Endpoint):
         }
         params = {snake_to_camel(key): value for key, value in params.items()}
 
-        result = self._req(
-            method="get",
-            path="/locations/lite",
-            params=params
-        )
+        result = self._req(method="get", path="/locations/lite", params=params)
 
         return result.json()
 
-    def get(
-            self,
-            location_id: int
-            ) -> dict:
+    def get(self, location_id: int) -> dict:
         """
         Gets the location information for the specified ID
 
         Parameters:
         - location_id (int): The unique identifier for the location
         """
-        result = self._req(
-            method="get",
-            path=f"/locations/{location_id}"
-        )
+        result = self._req(method="get", path=f"/locations/{location_id}")
 
         return result.json()
 
-    def create(
-            self,
-            payload: dict
-            ) -> Response:
+    def create(self, payload: dict) -> Response:
         """
         Creates a new location.
 
@@ -143,19 +126,11 @@ class locations(Endpoint):
 
         :return: Response object indicating the result of the creation request.
         """
-        result = self._req(
-            method="post",
-            path="/locations",
-            json=payload
-        )
+        result = self._req(method="post", path="/locations", json=payload)
 
         return result
 
-    def update(
-            self,
-            location_id: int,
-            payload: dict
-            ) -> Response:
+    def update(self, location_id: int, payload: dict) -> Response:
         """
         Updates an existing location.
 
@@ -200,35 +175,22 @@ class locations(Endpoint):
 
         :return: Response object indicating the result of the update request.
         """
-        result = self._req(
-            method="put",
-            path=f"/locations/{location_id}",
-            json=payload
-        )
+        result = self._req(method="put", path=f"/locations/{location_id}", json=payload)
 
         return result
 
-    def delete(
-            self,
-            location_id: int
-            ) -> Response:
+    def delete(self, location_id: int) -> Response:
         """
         Deletes the location or sub-location for the specified ID
 
         Parameters:
         - location_id (int): The unique identifier for the location
         """
-        result = self._req(
-            method="delete",
-            path=f"/locations/{location_id}"
-        )
+        result = self._req(method="delete", path=f"/locations/{location_id}")
 
         return result
 
-    def bulk_delete(
-            self,
-            ids: List[int]
-            ) -> list:
+    def bulk_delete(self, ids: List[int]) -> list:
         """
         Bulk delete locations up to a maximum of 100 users per request.
         The response returns the location IDs that were successfully deleted.
@@ -236,30 +198,24 @@ class locations(Endpoint):
         Parameters:
         - ids (List[int]): A list of IDs to be deleted
         """
-        payload = {
-            "ids": ids
-        }
+        payload = {"ids": ids}
 
-        result = self._req(
-            method="post",
-            path="/locations/bulkDelete",
-            json=payload
-        )
+        result = self._req(method="post", path="/locations/bulkDelete", json=payload)
 
         return result.json()
 
 
 class sublocations(Endpoint):
     def list(
-            self,
-            location_id: int,
-            search: Optional[str] = None,
-            xff_enabled: Optional[bool] = None,
-            auth_required: Optional[bool] = None,
-            bw_enfoced: Optional[bool] = None,
-            enforce_aup: Optional[bool] = None,
-            enable_firewall: Optional[bool] = None
-            ) -> List[dict]:
+        self,
+        location_id: int,
+        search: Optional[str] = None,
+        xff_enabled: Optional[bool] = None,
+        auth_required: Optional[bool] = None,
+        bw_enfoced: Optional[bool] = None,
+        enforce_aup: Optional[bool] = None,
+        enable_firewall: Optional[bool] = None,
+    ) -> List[dict]:
         """
         Gets information on sublocations.
 
@@ -280,25 +236,22 @@ class sublocations(Endpoint):
         }
         params = {snake_to_camel(key): value for key, value in params.items()}
 
-        result = self._req(
-            method="get",
-            path=f"/locations/{location_id}/sublocations"
-        )
+        result = self._req(method="get", path=f"/locations/{location_id}/sublocations")
 
         return result.json()
 
 
 class location_groups(Endpoint):
     def list(
-            self,
-            name: Optional[str] = None,
-            group_type: Optional[str] = None,
-            comments: Optional[str] = None,
-            location_id: Optional[int] = None,
-            last_mod_user: Optional[str] = None,
-            page: Optional[int] = None,
-            page_size: Optional[int] = None
-            ) -> List[dict]:
+        self,
+        name: Optional[str] = None,
+        group_type: Optional[str] = None,
+        comments: Optional[str] = None,
+        location_id: Optional[int] = None,
+        last_mod_user: Optional[str] = None,
+        page: Optional[int] = None,
+        page_size: Optional[int] = None,
+    ) -> List[dict]:
         """
         Gets information on location groups.
 
@@ -319,19 +272,13 @@ class location_groups(Endpoint):
         }
         params = {snake_to_camel(key): value for key, value in params.items()}
 
-        result = self._req(
-            method="get",
-            path="/locations/groups",
-            params=params
-        )
+        result = self._req(method="get", path="/locations/groups", params=params)
 
         return result.json()
 
     def list_lite(
-            self,
-            page: Optional[int] = None,
-            page_size: Optional[int] = None
-            ) -> List[dict]:
+        self, page: Optional[int] = None, page_size: Optional[int] = None
+    ) -> List[dict]:
         """
         Gets the name and ID dictionary of location groups
 
@@ -347,22 +294,18 @@ class location_groups(Endpoint):
         }
         params = {snake_to_camel(key): value for key, value in params.items()}
 
-        result = self._req(
-            method="get",
-            path="/locations/groups/lite",
-            params=params
-        )
+        result = self._req(method="get", path="/locations/groups/lite", params=params)
 
         return result.json()
 
     def count(
-            self,
-            last_mod_user: Optional[str] = None,
-            name: Optional[str] = None,
-            group_type: Optional[str] = None,
-            comments: Optional[str] = None,
-            location_id: Optional[int] = None
-            ):
+        self,
+        last_mod_user: Optional[str] = None,
+        name: Optional[str] = None,
+        group_type: Optional[str] = None,
+        comments: Optional[str] = None,
+        location_id: Optional[int] = None,
+    ):
         """
         Gets the list of location groups for your organization
 
@@ -381,35 +324,22 @@ class location_groups(Endpoint):
         }
         params = {snake_to_camel(key): value for key, value in params.items()}
 
-        result = self._req(
-            method="get",
-            path="/locations/groups/count",
-            params=params
-        )
+        result = self._req(method="get", path="/locations/groups/count", params=params)
 
         return result.json()
 
-    def get(
-            self,
-            group_id: int
-            ) -> dict:
+    def get(self, group_id: int) -> dict:
         """
         Gets the location group for the specified ID
 
         Parameters:
         - group_id (int): The unique identifier for the location group
         """
-        result = self._req(
-            method="get",
-            path=f"/locations/groups/{group_id}"
-        )
+        result = self._req(method="get", path=f"/locations/groups/{group_id}")
 
         return result.json()
 
-    def get_lite(
-            self,
-            group_id: int
-            ) -> dict:
+    def get_lite(self, group_id: int) -> dict:
         """
         Gets the name and ID dictionary for the specified location group ID.
         The response only provides id, name, and deleted information.
@@ -417,9 +347,6 @@ class location_groups(Endpoint):
         Parameters:
         - location_id (int): The unique identifier for the location group.
         """
-        result = self._req(
-            method="get",
-            path=f"/locations/groups/lite/{group_id}"
-        )
+        result = self._req(method="get", path=f"/locations/groups/lite/{group_id}")
 
         return result.json()

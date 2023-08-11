@@ -6,9 +6,9 @@ from typing import List, Optional
 
 class device_groups(Endpoint):
     def list(
-            self,
-            include_device_info: Optional[bool] = None,
-            include_pseudo_groups: Optional[bool] = None
+        self,
+        include_device_info: Optional[bool] = None,
+        include_pseudo_groups: Optional[bool] = None,
     ) -> List[dict]:
         """
         Gets a list of device groups.
@@ -25,29 +25,25 @@ class device_groups(Endpoint):
         }
         params = {snake_to_camel(key): value for key, value in params.items()}
 
-        result = self._req(
-            method="get",
-            path="/deviceGroups",
-            params=params
-        )
+        result = self._req(method="get", path="/deviceGroups", params=params)
 
         return result.json()
 
 
 class devices(Endpoint):
     def list(
-            self,
-            name: Optional[str] = None,
-            model: Optional[str] = None,
-            owner: Optional[str] = None,
-            os_type: Optional[str] = None,
-            os_version: Optional[str] = None,
-            device_group_id: Optional[int] = None,
-            user_ids: Optional[List[int]] = None,
-            search_all: Optional[str] = None,
-            include_all: Optional[bool] = None,
-            page: Optional[int] = None,
-            page_size: Optional[int] = None
+        self,
+        name: Optional[str] = None,
+        model: Optional[str] = None,
+        owner: Optional[str] = None,
+        os_type: Optional[str] = None,
+        os_version: Optional[str] = None,
+        device_group_id: Optional[int] = None,
+        user_ids: Optional[List[int]] = None,
+        search_all: Optional[str] = None,
+        include_all: Optional[bool] = None,
+        page: Optional[int] = None,
+        page_size: Optional[int] = None,
     ) -> List[dict]:
         """
         Gets a list of devices. Any given search parameters are applied during device search.
@@ -74,23 +70,23 @@ class devices(Endpoint):
             for key, value in args.items()
             if value is not None and key != "self"
         }
-        params = {snake_to_camel(key): value for key, value in params.items() if key != 'search_all'}
+        params = {
+            snake_to_camel(key): value
+            for key, value in params.items()
+            if key != "search_all"
+        }
 
-        result = self._req(
-            method="get",
-            path="/deviceGroups/devices",
-            params=params
-        )
+        result = self._req(method="get", path="/deviceGroups/devices", params=params)
 
         return result.json()
-    
+
     def list_lite(
-            self,
-            name: Optional[str] = None,
-            user_ids: Optional[List[int]] = None,
-            include_all: Optional[bool] = None,
-            page: Optional[int] = None,
-            page_size: Optional[int] = None
+        self,
+        name: Optional[str] = None,
+        user_ids: Optional[List[int]] = None,
+        include_all: Optional[bool] = None,
+        page: Optional[int] = None,
+        page_size: Optional[int] = None,
     ) -> List[dict]:
         """
         Gets a list of devices that includes device ID, name, and owner name.
@@ -114,9 +110,7 @@ class devices(Endpoint):
         params = {snake_to_camel(key): value for key, value in params.items()}
 
         result = self._req(
-            method="get",
-            path="/deviceGroups/devices/lite",
-            params=params
+            method="get", path="/deviceGroups/devices/lite", params=params
         )
 
         return result.json()

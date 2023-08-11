@@ -8,34 +8,22 @@ class url_filtering_rules(Endpoint):
         """
         Gets a list of all of URL Filtering Policy rules.
         """
-        result = self._req(
-            method="get",
-            path="/urlFilteringRules"
-        )
+        result = self._req(method="get", path="/urlFilteringRules")
 
         return result.json()
 
-    def get(
-            self,
-            rule_id: int
-            ) -> dict:
+    def get(self, rule_id: int) -> dict:
         """
         Gets the URL Filtering Policy rule for the specified ID.
 
         Parameters:
         - rule_id (int): The unique identifier for the URL Filtering Policy rule.
         """
-        result = self._req(
-            method="get",
-            path=f"/urlFilteringRules/{rule_id}"
-        )
+        result = self._req(method="get", path=f"/urlFilteringRules/{rule_id}")
 
         return result.json()
 
-    def create(
-            self,
-            payload: dict
-            ) -> Response:
+    def create(self, payload: dict) -> Response:
         """
         Adds a URL Filtering Policy rule.
 
@@ -192,19 +180,11 @@ class url_filtering_rules(Endpoint):
                 "ciparule": bool
                 }
         """
-        result = self._req(
-            method="post",
-            path="/urlFilteringRules",
-            json=payload
-        )
+        result = self._req(method="post", path="/urlFilteringRules", json=payload)
 
         return result
 
-    def update(
-            self,
-            rule_id: int,
-            payload: dict
-            ) -> Response:
+    def update(self, rule_id: int, payload: dict) -> Response:
         """
         Adds a URL Filtering Policy rule.
 
@@ -363,17 +343,12 @@ class url_filtering_rules(Endpoint):
                 }
         """
         result = self._req(
-            method="put",
-            path=f"/urlFilteringRules/{rule_id}",
-            json=payload
+            method="put", path=f"/urlFilteringRules/{rule_id}", json=payload
         )
 
         return result
 
-    def delete(
-            self,
-            rule_id: int
-            ) -> Response:
+    def delete(self, rule_id: int) -> Response:
         """
         Deletes the URL Filtering Policy rule for the specified ID.
 

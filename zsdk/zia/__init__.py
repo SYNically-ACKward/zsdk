@@ -18,13 +18,7 @@ from .sandbox_report import sandbox_report_file, sandbox_report_quota
 from .sandbox_settings import sandbox_settings
 from .sandbox_submission import sandbox_submission
 from .security_policy_settings import allowlist, denylist, blacklist
-from .traffic_forwarding import (
-    gre_tunnels,
-    ipv6,
-    static_ips,
-    vips,
-    vpn_credentials
-)
+from .traffic_forwarding import gre_tunnels, ipv6, static_ips, vips, vpn_credentials
 from .url_categories import url_categories
 from .url_filtering_rules import url_filtering_rules
 from .user_authentication_settings import user_authentication_settings
@@ -300,7 +294,9 @@ class zia:
 
     @property
     def user_authentication_settings(self) -> user_authentication_settings:
-        return user_authentication_settings(session=self._session, base_url=self._base_url)
+        return user_authentication_settings(
+            session=self._session, base_url=self._base_url
+        )
 
     @property
     def app_total(self) -> app_total:
@@ -308,4 +304,6 @@ class zia:
 
     @property
     def intermediate_ca_certificates(self) -> intermediate_ca_certificates:
-        return intermediate_ca_certificates(session=self._session, base_url=self._base_url)
+        return intermediate_ca_certificates(
+            session=self._session, base_url=self._base_url
+        )

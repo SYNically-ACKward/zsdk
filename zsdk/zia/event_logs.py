@@ -6,23 +6,15 @@ import csv
 
 
 class event_logs(Endpoint):
-    def status(
-            self
-    ) -> dict:
+    def status(self) -> dict:
         """
         Gets the status of the request to generate an event log report.
         """
-        result = self._req(
-            method="get",
-            path="/eventlogEntryReport"
-        )
+        result = self._req(method="get", path="/eventlogEntryReport")
 
         return result.json()
 
-    def create(
-            self,
-            payload: dict
-    ) -> Response:
+    def create(self, payload: dict) -> Response:
         """
         Creates an event log report for the specified time period.
 
@@ -40,38 +32,24 @@ class event_logs(Endpoint):
             "statusCode": str           # The search string used to match against the status code in event log entries
         }
         """
-        result = self._req(
-            method="post",
-            path="/eventlogEntryReport",
-            json=payload
-        )
+        result = self._req(method="post", path="/eventlogEntryReport", json=payload)
 
         return result
 
-    def delete(
-            self
-    ) -> Response:
+    def delete(self) -> Response:
         """
         Cancels the request to generate an event log report.
         """
-        result = self._req(
-            method="delete",
-            path="/eventlogEntryReport"
-        )
+        result = self._req(method="delete", path="/eventlogEntryReport")
 
         return result
 
-    def download(
-            self
-    ) -> csv:
+    def download(self) -> csv:
         """
         Downloads the most recently generated event log report.
         Calling this endpoint downloads the file only if the report generation status is COMPLETE.
         The report status can be retrieved using the STATUS method.
         """
-        result = self._req(
-            method="get",
-            path="/eventlogEntryReport/download"
-        )
+        result = self._req(method="get", path="/eventlogEntryReport/download")
 
         return result.content.decode("utf-8")
