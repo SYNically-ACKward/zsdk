@@ -1,13 +1,13 @@
 import time
+import logging
 
 import requests
 import urllib3
-from .logger import setup_logger
 
 # Disable the InsecureRequestWarning
 urllib3.disable_warnings(category=urllib3.exceptions.InsecureRequestWarning)
 
-logger = setup_logger(name=__name__)
+log = logging.getLogger(__name__)
 
 
 def call(
@@ -27,9 +27,9 @@ def call(
             return result
         except requests.RequestException as e:
             if not silence_logs:
-                logger.error(f"Encountered Error: {e}")
+                log.error(f"Encountered Error: {e}")
             if attempt < retries:
-                logger.debug(
+                log.debug(
                     f"Retrying request in {wait_time}s. Retries remaining: {retries - attempt}"
                 )
                 time.sleep(wait_time)
