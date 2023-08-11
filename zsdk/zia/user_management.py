@@ -187,7 +187,7 @@ class users(Endpoint):
         """
         result = self._req(
             method="put",
-            path="/users",
+            path=f"/users/{user_id}",
             json=payload
         )
 
