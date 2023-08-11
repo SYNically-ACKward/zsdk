@@ -1,4 +1,4 @@
-## ZSDK v1.0.1 (In Progress) [@Ryan Ulrick](mailto:rulrick@zscaler.com)
+## ZSDK v1.1.1 (In Progress) [@Ryan Ulrick](mailto:rulrick@zscaler.com)
 - Update README.md with appropriate doc links. Iterate pyproject.toml to minor rev 1
 
 ## ZSDK v1.1.0 (8-11-2023) [@Ryan Ulrick]
