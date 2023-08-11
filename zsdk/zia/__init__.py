@@ -9,6 +9,7 @@ from zsdk.utilities import call
 from .admin_roles import admin_roles
 from .admin_users import admin_users
 from .admin_audit_logs import admin_audit_logs
+from .app_total import app_total
 from .device_groups import device_groups, devices
 from .event_logs import event_logs
 from .locations import locations, location_groups, sublocations
@@ -299,3 +300,7 @@ class zia:
     @property
     def user_authentication_settings(self) -> user_authentication_settings:
         return user_authentication_settings(session=self._session, base_url=self._base_url)
+
+    @property
+    def app_total(self) -> app_total:
+        return app_total(session=self._session, base_url=self._base_url)
