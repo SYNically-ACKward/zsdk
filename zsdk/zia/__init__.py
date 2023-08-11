@@ -24,6 +24,7 @@ from .traffic_forwarding import (
     vips,
     vpn_credentials
 )
+from .url_categories import url_categories
 from .user_management import departments, groups, users, auditors
 from .firewall_policies import (
     firewall_filtering_rules,
@@ -284,3 +285,7 @@ class zia:
     @property
     def vpn_credentials(self) -> vpn_credentials:
         return vpn_credentials(session=self._session, base_url=self._base_url)
+
+    @property
+    def url_categories(self) -> url_categories:
+        return url_categories(session=self._session, base_url=self._base_url)
