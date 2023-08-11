@@ -135,11 +135,10 @@ class users(Endpoint):
         {
             "name": str,              # Name of the user. (Required)
             "email": str,             # Email address of the user. (Required)
-            "groups": List[Dict],     # List of groups the user belongs to. Each group has 'id', 'name', 'idpId', and 'comments'. (Required)
+            "groups": List[dict],     # List of groups the user belongs to. Each group has 'id', 'name', 'idpId', and 'comments'. (Required)
             "department": {           # Department details the user is associated with. Contains 'id', 'name', 'idpId', 'comments', and 'deleted'. (Required)
                 "id": int,
-                "name": str,
-                "comments": str
+                "name": str
             },
             "comments": str,          # Additional comments about the user.
             "tempAuthEmail": str,     # Temporary authorization email for the user.
@@ -153,7 +152,11 @@ class users(Endpoint):
 
         return result
 
-    def update(self) -> Response:
+    def update(
+            self,
+            user_id: int,
+            payload: dict
+            ) -> Response:
         """
         Update an existing user.
 
@@ -182,7 +185,13 @@ class users(Endpoint):
         Returns:
         - Response: A Response object containing the server's response to the update request.
         """
-        pass
+        result = self._req(
+            method="put",
+            path="/users",
+            json=payload
+        )
+
+        return result
 
     def delete(self, user_id: int) -> Response:
         """
