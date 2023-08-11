@@ -77,7 +77,7 @@ def test_get_users(tenant):
 def test_create_users(tenant, test_user_data):
     data = tenant.users.create(test_user_data)
     assert data.status_code == 200
-    assert 'pytest@tng-lab.org' in data.content.get('email')
+    assert 'pytest@tng-lab.org' in data.json().get('email')
 
 
 @pytest.mark.users
@@ -98,7 +98,7 @@ def test_update_users(tenant):
         update_data)
 
     assert result.status_code == 200
-    assert "Update" in result.content.get('name')
+    assert "Update" in result.json().get('name')
 
 
 @pytest.mark.users
