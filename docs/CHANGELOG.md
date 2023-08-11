@@ -1,4 +1,6 @@
 ## ZSDK v0.1.2 (In Progress) [@Ryan Ulrick](mailto:rulrick@zscaler.com)
+- Feat: Tests placeholders for all intermediate_ca_certs.intermediate_ca_certificates sub-methods
+- Feat: Methods for intermediate_ca_certs.intermediate_ca_certificates: create, create_csr, create_key_pair, delete, finalize, get, get_attestation, get_csr, get_lite, get_public_key, get_ready_certs, list, list_lite, show_csr, show_signed_cert, update, update_default, upload_cert, upload_cert_chain, verify_key_attestation
 - Feat: Tests placeholders fro app_total.app_total methods
 - Feat: Methods for app_total.app_total: get, analyze
 - Feat: Tests placeholders for user_authentication_settings sub-methods

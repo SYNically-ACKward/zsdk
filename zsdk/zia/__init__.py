@@ -41,6 +41,7 @@ from .firewall_policies import (
     network_services,
     time_windows,
 )
+from .intermediate_ca_certs import intermediate_ca_certificates
 from .data_loss_prevention import (
     web_dlp_rules,
     incident_receivers,
@@ -304,3 +305,7 @@ class zia:
     @property
     def app_total(self) -> app_total:
         return app_total(session=self._session, base_url=self._base_url)
+
+    @property
+    def intermediate_ca_certificates(self) -> intermediate_ca_certificates:
+        return intermediate_ca_certificates(session=self._session, base_url=self._base_url)
