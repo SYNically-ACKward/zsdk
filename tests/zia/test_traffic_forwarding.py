@@ -91,37 +91,37 @@ def test_ipv6_get_dns64(tenant):
 
 @pytest.mark.traffic_forwarding
 @pytest.mark.static_ips
-def test_static_ips_list():
+def test_static_ips_list(tenant):
     pass
 
 
 @pytest.mark.traffic_forwarding
 @pytest.mark.static_ips
-def test_static_ips_get():
+def test_static_ips_get(tenant):
     pass
 
 
 @pytest.mark.traffic_forwarding
 @pytest.mark.static_ips
-def test_static_ips_create():
+def test_static_ips_create(tenant):
     pass
 
 
 @pytest.mark.traffic_forwarding
 @pytest.mark.static_ips
-def test_static_ips_update():
+def test_static_ips_update(tenant):
     pass
 
 
 @pytest.mark.traffic_forwarding
 @pytest.mark.static_ips
-def test_static_ips_delete():
+def test_static_ips_delete(tenant):
     pass
 
 
 @pytest.mark.traffic_forwarding
 @pytest.mark.static_ips
-def test_static_ips_validate():
+def test_static_ips_validate(tenant):
     pass
 
 
@@ -130,19 +130,19 @@ def test_static_ips_validate():
 
 @pytest.mark.traffic_forwarding
 @pytest.mark.vips
-def test_vips_list():
+def test_vips_list(tenant):
     pass
 
 
 @pytest.mark.traffic_forwarding
 @pytest.mark.vips
-def test_vips_list_by_dc():
+def test_vips_list_by_dc(tenant):
     pass
 
 
 @pytest.mark.traffic_forwarding
 @pytest.mark.vips
-def test_vips_list_recommended():
+def test_vips_list_recommended(tenant):
     pass
 
 
@@ -151,35 +151,35 @@ def test_vips_list_recommended():
 
 @pytest.mark.traffic_forwarding
 @pytest.mark.vpn_credentials
-def test_vpn_credentials_list():
+def test_vpn_credentials_list(tenant):
     pass
 
 
 @pytest.mark.traffic_forwarding
 @pytest.mark.vpn_credentials
-def test_vpn_credentials_get():
+def test_vpn_credentials_get(tenant):
     pass
 
 
 @pytest.mark.traffic_forwarding
 @pytest.mark.vpn_credentials
-def test_vpn_credentials_create():
+def test_vpn_credentials_create(tenant):
     pass
 
 
 @pytest.mark.traffic_forwarding
 @pytest.mark.vpn_credentials
-def test_vpn_credentials_update():
+def test_vpn_credentials_update(tenant):
     pass
 
 
 @pytest.mark.traffic_forwarding
 @pytest.mark.vpn_credentials
-def test_vpn_credentials_delete():
+def test_vpn_credentials_delete(tenant):
     pass
 
 
 @pytest.mark.traffic_forwarding
 @pytest.mark.vpn_credentials
-def test_vpn_credentials_bulk_delete():
+def test_vpn_credentials_bulk_delete(tenant):
     pass
