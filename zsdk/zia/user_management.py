@@ -152,11 +152,7 @@ class users(Endpoint):
 
         return result
 
-    def update(
-            self,
-            user_id: int,
-            payload: dict
-            ) -> Response:
+    def update(self, user_id: int, payload: dict) -> Response:
         """
         Update an existing user.
 
@@ -185,11 +181,7 @@ class users(Endpoint):
         Returns:
         - Response: A Response object containing the server's response to the update request.
         """
-        result = self._req(
-            method="put",
-            path=f"/users/{user_id}",
-            json=payload
-        )
+        result = self._req(method="put", path=f"/users/{user_id}", json=payload)
 
         return result
 

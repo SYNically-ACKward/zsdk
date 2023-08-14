@@ -26,11 +26,21 @@ def test_user_data(tenant):
     return {
         "name": "pytest user",
         "email": "pytest@tng-lab.org",
-        "groups": [random.choice([{'name': group['name'], 'id': group['id']}
-                                 for group in tenant.groups.list()])],
-        "department": random.choice([{'name': dept['name'], 'id': dept['id']}
-                                    for dept in tenant.departments.list()]),
-        "password": "Zscaler!123"
+        "groups": [
+            random.choice(
+                [
+                    {"name": group["name"], "id": group["id"]}
+                    for group in tenant.groups.list()
+                ]
+            )
+        ],
+        "department": random.choice(
+            [
+                {"name": dept["name"], "id": dept["id"]}
+                for dept in tenant.departments.list()
+            ]
+        ),
+        "password": "Zscaler!123",
     }
 
 
@@ -59,46 +69,43 @@ def test_list_groups(tenant):
 
 @pytest.mark.groups
 def test_get_groups(tenant):
-    groups = [group.get('id') for group in tenant.groups.list()]
+    groups = [group.get("id") for group in tenant.groups.list()]
     group = tenant.groups.get(random.choice(groups))
     assert type(group) is dict
-    assert group.get('id') in groups
+    assert group.get("id") in groups
 
 
 # users under user_management
 @pytest.mark.users
 def test_get_users(tenant):
-    users = [user.get('id') for user in tenant.users.list()]
+    users = [user.get("id") for user in tenant.users.list()]
     user = tenant.users.get(random.choice(users))
     assert type(user) is dict
-    assert user.get('id') in users
+    assert user.get("id") in users
 
 
 @pytest.mark.users
 def test_create_users(tenant, test_user_data):
     data = tenant.users.create(test_user_data)
     assert data.status_code == 200
-    assert 'pytest@tng-lab.org' in data.json().get('email')
+    assert "pytest@tng-lab.org" in data.json().get("email")
 
 
 @pytest.mark.users
 def test_update_users(tenant):
-    user = next((user
-                for user in tenant.users.list()
-                if user['email'] == 'pytest@tng-lab.org'),
-                None
-                )
+    user = next(
+        (user for user in tenant.users.list() if user["email"] == "pytest@tng-lab.org"),
+        None,
+    )
 
     update_data = user
 
-    update_data['name'] = f"{user.get('name')} Update"
+    update_data["name"] = f"{user.get('name')} Update"
 
-    result = tenant.users.update(
-        user.get('id'),
-        update_data)
+    result = tenant.users.update(user.get("id"), update_data)
 
     assert result.status_code == 200
-    assert "Update" in result.json().get('name')
+    assert "Update" in result.json().get("name")
 
 
 @pytest.mark.users
@@ -110,15 +117,12 @@ def test_list_users(tenant):
 
 @pytest.mark.users
 def test_delete_users(tenant):
-    user = next((user
-                for user in tenant.users.list()
-                if user['email'] == 'pytest@tng-lab.org'),
-                None
-                )
-
-    result = tenant.users.delete(
-        user.get('id')
+    user = next(
+        (user for user in tenant.users.list() if user["email"] == "pytest@tng-lab.org"),
+        None,
     )
+
+    result = tenant.users.delete(user.get("id"))
 
     assert result.status_code == 204
 
