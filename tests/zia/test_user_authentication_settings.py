@@ -22,9 +22,27 @@ def tenant():
 
 @pytest.mark.user_authentication_settings
 def test_user_authentication_settings_list(tenant):
-    pass
+    result = tenant.user_authentication_settings.list()
+    assert type(result) is dict
+    assert type(result.get('urls')) is list
 
 
 @pytest.mark.user_authentication_settings
 def test_user_authentication_settings_update(tenant):
-    pass
+    update_urls = ["pytest.example.com"]
+    result = tenant.user_authentication_settings.update(update_urls)
+    assert type(result) is dict
+    assert type(result.get('urls')) is list
+    assert len(result.get('urls')) != 0
+
+    reset_result = tenant.user_authentication_settings.update(update_urls, action="REMOVE_FROM_LIST")
+    assert type(reset_result) is dict
+    assert len(reset_result.get('urls')) != 0
+
+    reset_settings = tenant.user_authentication_settings.list()
+    assert type(reset_settings) is dict
+    assert len(reset_settings.get('urls')) == 0
+
+
+def test_activate(tenant):
+    tenant.activate_changes()
