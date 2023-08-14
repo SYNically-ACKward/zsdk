@@ -1,10 +1,8 @@
-<<<<<<< HEAD
-## ZSDK v1.1.1 (In Progress) [@Ryan Ulrick](mailto:rulrick@zscaler.com)
-- Update README.md with appropriate doc links. Iterate pyproject.toml to minor rev 1
-=======
 ## ZSDK v1.1.1 (8-11-2023) [@Ryan Ulrick](mailto:rulrick@zscaler.com)
 - Fix: zia.users.update() method fix
->>>>>>> main
+- Feat: user_management tests
+- Feat: user_auth_settings tests
+- Feat: url_filtering_rules tests
 
 ## ZSDK v1.1.0 (8-11-2023) [@Ryan Ulrick]
 - Updated logging handlers
