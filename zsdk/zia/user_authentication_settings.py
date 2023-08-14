@@ -12,7 +12,7 @@ class user_authentication_settings(Endpoint):
         return result.json()
 
     def update(
-        self, action: Optional[str] = "ADD_TO_LIST", urls: List[str] = []
+        self, urls: List[str] = [], action: Optional[str] = "ADD_TO_LIST"
     ) -> dict:
         """
         Adds a URL to or removes a URL from the cookie authentication exempt list.
