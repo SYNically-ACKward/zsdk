@@ -1,5 +1,4 @@
 import os
-import time
 import pytest
 import tomli
 from zsdk.zia import zia
