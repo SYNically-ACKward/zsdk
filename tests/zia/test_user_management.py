@@ -26,12 +26,13 @@ def test_user_data(tenant):
     return {
         "name": "pytest user",
         "email": "pytest@tng-lab.org",
-        "groups": random.choice([{'name': group['name'], 'id': group['id']}
-                                 for group in tenant.groups.list()]),
+        "groups": [random.choice([{'name': group['name'], 'id': group['id']}
+                                 for group in tenant.groups.list()])],
         "department": random.choice([{'name': dept['name'], 'id': dept['id']}
                                     for dept in tenant.departments.list()]),
         "password": "Zscaler!123"
     }
+
 
 # departments under user_management
 @pytest.mark.departments
@@ -88,10 +89,9 @@ def test_update_users(tenant):
                 None
                 )
 
-    update_data = {
-        "name": f"{user.get('name')} Update",
-        "id": user.get('id')
-    }
+    update_data = user
+
+    update_data['name'] = f"{user.get('name')} Update"
 
     result = tenant.users.update(
         user.get('id'),
@@ -110,15 +110,30 @@ def test_list_users(tenant):
 
 @pytest.mark.users
 def test_delete_users(tenant):
-    pass
+    user = next((user
+                for user in tenant.users.list()
+                if user['email'] == 'pytest@tng-lab.org'),
+                None
+                )
+
+    result = tenant.users.delete(
+        user.get('id')
+    )
+
+    assert result.status_code == 204
 
 
 @pytest.mark.users
-def test_bulk_delete_users(tenant):
+def test_bulk_delete_users(tenant):  # TODO
     pass
 
 
 # auditors under user_management
 @pytest.mark.auditors
 def test_list_auditors(tenant):
-    pass
+    result = tenant.auditors.list()
+    assert type(result) is list
+
+
+def test_activate(tenant):
+    tenant.activate_changes()
