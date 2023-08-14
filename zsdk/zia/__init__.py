@@ -1,9 +1,9 @@
+import logging
 import time
 
 import requests
 from requests import Response
 
-from zsdk.logger import setup_logger
 from zsdk.utilities import call
 
 from .admin_roles import admin_roles
@@ -47,7 +47,7 @@ from .data_loss_prevention import (
     dlp_edm,
 )
 
-logger = setup_logger(name=__name__)
+log = logging.getLogger(__name__)
 
 
 def _obfuscate_api_key(seed: str) -> list:
@@ -90,7 +90,7 @@ class zia:
                 "timestamp": now,
             },
         )
-        logger.debug(result)
+        log.debug(result)
         return result
 
     def activate_changes(
