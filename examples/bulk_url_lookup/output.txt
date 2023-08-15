@@ -1,0 +1,48 @@
+URL: server.events.data.microsoft.com
+    Categorization: CORPORATE_MARKETING, PROFESSIONAL_SERVICES
+    Pre-defined Applications: None
+
+URL: msedgedriver.azureedge.net
+    Categorization: OTHER_INFORMATION_TECHNOLOGY
+    Pre-defined Applications: None
+
+URL: chromedriver.storage.googleapis.com
+    Categorization: PROFESSIONAL_SERVICES, INTERNET_SERVICES
+    Pre-defined Applications: None
+
+URL: ocsp.digicert.com
+    Categorization: PROFESSIONAL_SERVICES
+    Pre-defined Applications: DIGICERT
+
+URL: ocsp.msocsp.com
+    Categorization: INTERNET_SERVICES
+    Pre-defined Applications: None
+
+URL: mscrl.microsoft.com
+    Categorization: CORPORATE_MARKETING, PROFESSIONAL_SERVICES
+    Pre-defined Applications: OTHER_OFFICE365
+
+URL: crl3.digicert.com
+    Categorization: PROFESSIONAL_SERVICES
+    Pre-defined Applications: DIGICERT
+
+URL: crl4.digicert.com
+    Categorization: PROFESSIONAL_SERVICES
+    Pre-defined Applications: DIGICERT
+
+URL: servicebus.windows.net
+    Categorization: PROFESSIONAL_SERVICES
+    Pre-defined Applications: OTHER_OFFICE365
+
+URL: emea.events.data.microsoft.com
+    Categorization: CORPORATE_MARKETING, PROFESSIONAL_SERVICES
+    Pre-defined Applications: None
+
+URL: api.powerplatform.com
+    Categorization: CORPORATE_MARKETING, PROFESSIONAL_SERVICES
+    Pre-defined Applications: None
+
+URL: dynamics.com
+    Categorization: CORPORATE_MARKETING, OTHER_INFORMATION_TECHNOLOGY
+    Pre-defined Applications: DYNAMICS
+

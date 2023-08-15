@@ -1,0 +1,13 @@
+server.events.data.microsoft.com
+msedgedriver.azureedge.net
+chromedriver.storage.googleapis.com
+ocsp.digicert.com
+ocsp.msocsp.com
+mscrl.microsoft.com
+crl3.digicert.com
+crl4.digicert.com
+servicebus.windows.net
+servicebus.windows.net
+emea.events.data.microsoft.com
+api.powerplatform.com
+dynamics.com
