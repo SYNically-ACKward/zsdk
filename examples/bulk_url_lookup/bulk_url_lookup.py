@@ -30,19 +30,22 @@ with open('urls.txt', 'r') as f:
 
 def bulk_lookup(urls):
     data = tenant.url_categories.lookup(urls)
-    with open("output.txt", "w") as f:
-        for url in data:
-            application_str = (
-                ', '.join(url['application'])
-                if isinstance(url.get('application'), list)
-                else url.get('application', 'None')
-            )
-            output_str = (
-                f"URL: {url.get('url')}\n"
-                f"    Categorization: {', '.join(cat for cat in url.get('urlClassifications'))}\n"
-                f"    Pre-defined Applications: {application_str}\n"
-            )
-            f.write(output_str + "\n")
+    if len(data) <= 100:
+        with open("output.txt", "w") as f:
+            for url in data:
+                application_str = (
+                    ', '.join(url['application'])
+                    if isinstance(url.get('application'), list)
+                    else url.get('application', 'None')
+                )
+                output_str = (
+                    f"URL: {url.get('url')}\n"
+                    f"    Categorization: {', '.join(cat for cat in url.get('urlClassifications'))}\n"
+                    f"    Pre-defined Applications: {application_str}\n"
+                )
+                f.write(output_str + "\n")
+    else:
+        print("Too many URLs entered. Please try again with 100 max.")
 
 
 bulk_lookup(urls)
