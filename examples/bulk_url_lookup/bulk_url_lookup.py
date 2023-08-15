@@ -17,13 +17,9 @@ Overview:
 """
 from zsdk.zia import zia as zscaler
 
-tenant = zscaler(
-                "username@example.com",
-                "P@ssw0rd",
-                "your_api_key",
-                "your_cloud_name")
+tenant = zscaler("username@example.com", "P@ssw0rd", "your_api_key", "your_cloud_name")
 
-with open('urls.txt', 'r') as f:
+with open("urls.txt", "r") as f:
     data = f.readlines()
     urls = [line.strip() for line in data]
 
@@ -34,9 +30,9 @@ def bulk_lookup(urls):
         with open("output.txt", "w") as f:
             for url in data:
                 application_str = (
-                    ', '.join(url['application'])
-                    if isinstance(url.get('application'), list)
-                    else url.get('application', 'None')
+                    ", ".join(url["application"])
+                    if isinstance(url.get("application"), list)
+                    else url.get("application", "None")
                 )
                 output_str = (
                     f"URL: {url.get('url')}\n"
