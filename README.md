@@ -26,11 +26,11 @@ zscaler = zia(username='YOUR_USERNAME', password='YOUR_PASSWORD', api_key='YOUR_
 print(zscaler.locations.list())
 ```
 
-See the [examples](examples/) directory for more comprehensive examples and the [documentation](https://help.zscaler.com/zia/getting-started-zia-api) for detailed API reference.
+See the [examples](./examples/) directory for more comprehensive examples and the [documentation](https://help.zscaler.com/zia/getting-started-zia-api) for detailed API reference.
 
 ## Support and Contributions
 
-For questions, issues, or contributions, please see the [CONTRIBUTING.md](CONTRIBUTING.md) file.
+For questions, issues, or contributions, please see the [CONTRIBUTING.md](./CONTRIBUTING.md) file.
 
 ## License
 

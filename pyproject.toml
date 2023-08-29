@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "zsdk"
-version = "1.1.1"
+version = "1.1.2"
 description = "Unofficial Python SDK for Zscaler public API endpoints."
 authors = ["Ryan Ulrick <rulrick@zscaler.com>"]
 readme = "README.md"
@@ -20,3 +20,6 @@ tomli = "^2.0.1"
 [build-system]
 requires = ["poetry-core"]
 build-backend = ["tool.poetry"]
+
+[project.urls]
+"Homepage" = "https://github.com/SYNically-ACKward/zsdk"
