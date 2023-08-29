@@ -26,13 +26,13 @@ zscaler = zia(username='YOUR_USERNAME', password='YOUR_PASSWORD', api_key='YOUR_
 print(zscaler.locations.list())
 ```
 
-See the [examples](./examples/) directory for more comprehensive examples and the [documentation](https://help.zscaler.com/zia/getting-started-zia-api) for detailed API reference.
+See the [examples](https://github.com/SYNically-ACKward/zsdk/tree/main/examples) directory for more comprehensive examples and the [documentation](https://help.zscaler.com/zia/getting-started-zia-api) for detailed API reference.
 
 ## Support and Contributions
 
-For questions, issues, or contributions, please see the [CONTRIBUTING.md](./CONTRIBUTING.md) file.
+For questions, issues, or contributions, please see the [CONTRIBUTING.md](https://github.com/SYNically-ACKward/zsdk/blob/1bfe49df609474e7820274460238fac2288d3964/CONTRIBUTING.md) file.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/SYNically-ACKward/zsdk/blob/1bfe49df609474e7820274460238fac2288d3964/LICENSE) file for details.
 
