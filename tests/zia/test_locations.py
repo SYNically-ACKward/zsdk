@@ -1,6 +1,7 @@
 import os
 import pytest
 import tomli
+import random
 from zsdk.zia import zia
 
 app_dir = os.path.dirname(os.path.abspath(__file__))
@@ -22,20 +23,27 @@ def tenant():
 
 @pytest.mark.locations
 @pytest.mark.locations_locations
-def test_locations_list():
-    pass
+def test_locations_list(tenant):
+    data = tenant.locations.list()
+    assert type(data) is list
+    assert len(data) != 0
 
 
 @pytest.mark.locations
 @pytest.mark.locations_locations
 def test_locations_list_lite():
-    pass
+    data = tenant.locations.list_lite()
+    assert type(data) is list
+    assert len(data) != 0
 
 
 @pytest.mark.locations
 @pytest.mark.locations_locations
 def test_locations_get():
-    pass
+    locs = tenant.locations.list()
+    loc = random.choice([loc.get('id') for loc in locs])
+    data = tenant.locations.get(loc)
+    assert type(data) is dict
 
 
 @pytest.mark.locations

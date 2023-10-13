@@ -4,6 +4,7 @@ import requests
 import requests.exceptions
 
 from zsdk.utilities import call
+from zsdk.logger import StructuredLogger as logger
 
 
 class Endpoint:

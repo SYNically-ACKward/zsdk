@@ -1,4 +1,5 @@
 from zsdk.api import Endpoint
+from zsdk.logger import StructuredLogger as logger
 from zsdk.utilities import snake_to_camel
 from requests import Response
 from typing import List, Optional
