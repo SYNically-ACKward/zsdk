@@ -41,7 +41,7 @@ def test_locations_list_lite():
 @pytest.mark.locations_locations
 def test_locations_get():
     locs = tenant.locations.list()
-    loc = random.choice([loc.get('id') for loc in locs])
+    loc = random.choice([loc.get("id") for loc in locs])
     data = tenant.locations.get(loc)
     assert type(data) is dict
 

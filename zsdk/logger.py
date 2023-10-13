@@ -2,18 +2,19 @@ import logging
 import json
 import sys
 
+
 class StructuredLogger:
     def __init__(self, name, log_level=logging.INFO):
         self.logger = logging.getLogger(name)
         self.logger.setLevel(log_level)
 
         handler = logging.StreamHandler(sys.stdout)
-        formatter = logging.Formatter('%(message)s')
+        formatter = logging.Formatter("%(message)s")
         handler.setFormatter(formatter)
         self.logger.addHandler(handler)
 
     def log(self, level, message, **kwargs):
-        log_entry = {'level': level, 'message': message, **kwargs}
+        log_entry = {"level": level, "message": message, **kwargs}
         self.logger.log(level, json.dumps(log_entry))
 
     def info(self, message, **kwargs):
