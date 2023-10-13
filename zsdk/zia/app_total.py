@@ -1,4 +1,5 @@
 from zsdk.api import Endpoint
+from zsdk.logger import StructuredLogger as logger
 from requests import Response
 from typing import Optional
 

@@ -1,4 +1,5 @@
 from zsdk.api import Endpoint
+from zsdk.logger import StructuredLogger as logger
 
 
 class admin_users(Endpoint):

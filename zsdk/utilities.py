@@ -4,6 +4,8 @@ import logging
 import requests
 import urllib3
 
+from zsdk.logger import StructuredLogger as logger
+
 # Disable the InsecureRequestWarning
 urllib3.disable_warnings(category=urllib3.exceptions.InsecureRequestWarning)
 
