@@ -10,7 +10,6 @@ ENV PYTHONUNBUFFERED 1
 
 # Install/Upgrade packages.
 COPY pip.conf .
-COPY requirements.txt .
-RUN pip install -U pip -r requirements.txt
+RUN pip install -U pip zsdk
 
 ENTRYPOINT ["python"]

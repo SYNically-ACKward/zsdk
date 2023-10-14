@@ -9,7 +9,6 @@ services:
     entrypoint: ["python"]
     volumes:
       - ./:/app
-    platform: linux/amd64
     logging:
       driver: 'json-file'
       options:
