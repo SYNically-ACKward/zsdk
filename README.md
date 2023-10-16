@@ -23,7 +23,7 @@ Here's a quick example to get you started with ZIA:
 
 ```python
 from zsdk.zia import ZIA
-zscaler = zia(username='YOUR_USERNAME', password='YOUR_PASSWORD', api_key='YOUR_API_KEY', cloud_name="zscaler.net")
+zscaler = ZIA(username='YOUR_USERNAME', password='YOUR_PASSWORD', api_key='YOUR_API_KEY', cloud_name="zscaler.net")
 print(zscaler.locations.list())
 ```
 
