@@ -309,5 +309,9 @@ class ZIA:
 class zia(ZIA):
     def __init__(self, *args, **kwargs):
         import warnings
-        warnings.warn("The 'zia' class is deprecated and will be removed by 2024-01-01. Please use 'ZIA' instead.", DeprecationWarning)
+
+        warnings.warn(
+            "The 'zia' class is deprecated and will be removed by 2024-01-01. Please use 'ZIA' instead.",
+            DeprecationWarning,
+        )
         super().__init__(*args, **kwargs)
