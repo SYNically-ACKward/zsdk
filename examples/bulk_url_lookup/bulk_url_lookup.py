@@ -15,7 +15,7 @@ Overview:
 3. Perform bulk lookup.
 4. Write results to output file `output.txt`
 """
-from zsdk.zia import zia as zscaler
+from zsdk.zia import ZIA as zscaler
 
 tenant = zscaler("username@example.com", "P@ssw0rd", "your_api_key", "your_cloud_name")
 

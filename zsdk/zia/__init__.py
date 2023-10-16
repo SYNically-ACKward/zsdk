@@ -57,7 +57,7 @@ def _obfuscate_api_key(seed: str) -> list:
     return str(now), str(key)
 
 
-class zia:
+class ZIA:
     def __init__(
         self,
         username: str,
@@ -304,3 +304,10 @@ class zia:
         return intermediate_ca_certificates(
             session=self._session, base_url=self._base_url
         )
+
+
+class zia(ZIA):
+    def __init__(self, *args, **kwargs):
+        import warnings
+        warnings.warn("The 'zia' class is deprecated and will be removed by 2024-01-01. Please use 'ZIA' instead.", DeprecationWarning)
+        super().__init__(*args, **kwargs)
