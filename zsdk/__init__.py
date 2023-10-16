@@ -1,11 +1,11 @@
 """zsdk Python Package"""
 
-from .zia import zia
+from .zia import ZIA
 
 __author__ = "Ryan Ulrick"
 __contributors__ = []
 __license__ = "MIT"
 
 __all__ = [
-    "zia",
+    "ZIA",
 ]

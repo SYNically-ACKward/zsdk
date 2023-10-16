@@ -57,7 +57,7 @@ def _obfuscate_api_key(seed: str) -> list:
     return str(now), str(key)
 
 
-class zia:
+class ZIA:
     def __init__(
         self,
         username: str,
